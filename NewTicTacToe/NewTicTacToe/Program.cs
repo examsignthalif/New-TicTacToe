@@ -19,6 +19,29 @@ namespace NewTicTacToe
             Console.ReadKey();
         }
 
+        static public bool CheckIsMatchDraw(string[] arr)
+        {
+            string PreviousValue = "";
+            bool IsMatchDraw = false;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(arr[i] == "_")
+                {
+                    if (PreviousValue == arr[i])
+                    {
+                        Console.WriteLine("Match Draw");
+                        IsMatchDraw = true;
+                        break;
+                    }
+                    else
+                        PreviousValue = arr[i];
+                }
+                else
+                    PreviousValue = arr[i];
+            }
+            return IsMatchDraw;
+        }
+
         static public void LoadBoard()
         {
             Console.Write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -39,7 +62,9 @@ namespace NewTicTacToe
 
         static public int Player1Input()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Player\tX\t|");
+            Console.ResetColor();
             string a = Console.ReadLine();
             int input = int.Parse(a);
 
@@ -57,7 +82,9 @@ namespace NewTicTacToe
         }
         static public int Player2Input()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Player\tO\t|");
+            Console.ResetColor();
             string a = Console.ReadLine();
             int input = int.Parse(a);
 
@@ -83,7 +110,7 @@ namespace NewTicTacToe
                     i -= Player1Input();
                 else if (Player2)
                     i -= Player2Input();
-
+                
                 if (i >= 4)
                     if (gv.ValidationProcess(PlayBoard))
                         break;
