@@ -74,5 +74,95 @@ namespace NewTicTacToe
                     i -= Player2Input();
             }
         }
+
+        static public void ValidationProcess()
+        {
+
+        }
+
+        static public void LeftVerticalCheck(string[] arr) 
+        {
+            string v1 = arr[0];
+            string v2 = arr[3];
+            string v3 = arr[6];
+            if(v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("LV Matched");
+            }
+        }
+
+        static public void RightVerticalCheck(string[] arr)
+        {
+            string v1 = arr[2];
+            string v2 = arr[5];
+            string v3 = arr[8];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("RV Matched");
+            }
+        }
+        static public void MiddleVerticalCheck(string[] arr)
+        {
+            string v1 = arr[1];
+            string v2 = arr[4];
+            string v3 = arr[7];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("MV Matched");
+            }
+        }
+
+        static public void TopHorizontalCheck(string[] arr)
+        {
+            string v1 = arr[0];
+            string v2 = arr[1];
+            string v3 = arr[2];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("TH Matched");
+            }
+        }
+        static public void MiddleHorizontalCheck(string[] arr)
+        {
+            string v1 = arr[3];
+            string v2 = arr[4];
+            string v3 = arr[5];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("MH Matched");
+            }
+        }
+        static public void BottomHorizontalCheck(string[] arr)
+        {
+            string v1 = arr[6];
+            string v2 = arr[7];
+            string v3 = arr[8];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("BH Matched");
+            }
+        }
+
+        static public void LeftToRightDiagnol(string[] arr)
+        {
+            string v1 = arr[0];
+            string v2 = arr[4];
+            string v3 = arr[8];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("LRD Matched");
+            }
+        }
+
+        static public void RightToLeftDiagnol(string[] arr)
+        {
+            string v1 = arr[0];
+            string v2 = arr[4];
+            string v3 = arr[8];
+            if (v1 == v2 && v2 == v3)
+            {
+                Console.WriteLine("RLD Matched");
+            }
+        }
     }
 }
