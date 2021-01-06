@@ -45,6 +45,7 @@ namespace NewTicTacToe
             string v3 = arr[6];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -59,6 +60,7 @@ namespace NewTicTacToe
             string v3 = arr[8];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -72,6 +74,7 @@ namespace NewTicTacToe
             string v3 = arr[7];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -86,6 +89,7 @@ namespace NewTicTacToe
             string v3 = arr[2];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -99,6 +103,7 @@ namespace NewTicTacToe
             string v3 = arr[5];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -112,6 +117,7 @@ namespace NewTicTacToe
             string v3 = arr[8];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -126,6 +132,7 @@ namespace NewTicTacToe
             string v3 = arr[8];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }
@@ -140,6 +147,7 @@ namespace NewTicTacToe
             string v3 = arr[6];
             if (v1 == v2 && v2 == v3 && CheckEmptyValues(v1, v2, v3))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Player\t" + v1 + "\tWon Game");
                 return true;
             }

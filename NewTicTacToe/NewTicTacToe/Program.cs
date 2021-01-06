@@ -24,6 +24,13 @@ namespace NewTicTacToe
             Console.Write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             for (int i = 0; i < PlayBoard.Length; i++)
             {
+                if (PlayBoard[i] == "X")
+                    Console.ForegroundColor = ConsoleColor.Red;
+                else if(PlayBoard[i] == "O")
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                else
+                    Console.ForegroundColor = ConsoleColor.White;
+
                 Console.Write(PlayBoard[i] + "\t\t\t\t");
                 if (i == 2 || i == 5 || i == 8)
                     Console.Write("\n\n\n\n");
@@ -78,12 +85,9 @@ namespace NewTicTacToe
                     i -= Player2Input();
 
                 if (i >= 4)
-                    
                     if (gv.ValidationProcess(PlayBoard))
                         break;
             }
-        }
-
-        
+        }        
     }
 }
