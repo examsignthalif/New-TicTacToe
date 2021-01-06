@@ -8,8 +8,71 @@ namespace NewTicTacToe
 {
     class Program
     {
+        static public string[] PlayBoard = new string[9] { "_", "_", "_", "_", "_", "_", "_", "_", "_" };
+        static public List<int> PlayerHit = new List<int>();
+        static bool Player1 = true;
+        static bool Player2 = false;
         static void Main(string[] args)
         {
+            LoadBoard();
+            GameStart();
+        }
+
+        static public void LoadBoard()
+        {
+            Console.Write("\n");
+            for (int i = 0; i < PlayBoard.Length; i++)
+            {
+                Console.Write(PlayBoard[i] + "\t");
+                if (i == 2 || i == 5 || i == 8)
+                    Console.Write("\n\n");
+            }
+        }
+
+        static public int Player1Input()
+        {
+            string a = Console.ReadLine();
+            int input = int.Parse(a);
+
+            if (!PlayerHit.Contains(input))
+            {
+                PlayerHit.Add(input);
+                PlayBoard[input - 1] = "X";
+                LoadBoard();
+                Player1 = false;
+                Player2 = true;
+                return 0;
+            }
+            else
+                return 1;
+        }
+        static public int Player2Input()
+        {
+            string a = Console.ReadLine();
+            int input = int.Parse(a);
+
+            if (!PlayerHit.Contains(input))
+            {
+                PlayerHit.Add(input);
+                PlayBoard[input - 1] = "O";
+                LoadBoard();
+                Player1 = true;
+                Player2 = false;
+                return 0;
+            }
+            else
+                return 1;
+        }
+
+        static public void GameStart()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                if (Player1)
+                    i -= Player1Input();
+                else if (Player2)
+                    i -= Player2Input();
+            }
         }
     }
 }
