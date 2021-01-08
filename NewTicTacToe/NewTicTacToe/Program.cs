@@ -10,13 +10,52 @@ namespace NewTicTacToe
     {
         static public string[] PlayBoard = new string[9] { "_", "_", "_", "_", "_", "_", "_", "_", "_" };
         static public List<int> PlayerHit = new List<int>();
-        static bool Player1 = true;
+        static bool Player1 = false;
         static bool Player2 = false;
         static void Main(string[] args)
         {
+            Toss();
             LoadBoard();
             GameStart();
+
             Console.ReadKey();
+        }
+        static public void GameStart()
+        {
+            GameValidation gv = new GameValidation();
+            for (int i = 0; i < 9; i++)
+            {
+                if (Player1)
+                    i -= Player1Input();
+                else if (Player2)
+                    i -= Player2Input();
+
+                if (i >= 4)
+                    if (gv.ValidationProcess(PlayBoard))
+                        break;
+                    else if(i == 8)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("Draw");
+                        Console.ResetColor();
+                        break;
+                    }
+            }
+        }
+        static public void Toss()
+        {
+            Random random = new Random();
+            int ran = random.Next(0, 2);
+            if (ran == 0)
+            {
+                Player1 = true;
+                Console.WriteLine("Player X to Start");
+            }
+            else if (ran == 1)
+            {
+                Player2 = true;
+                Console.WriteLine("Player O to Start");
+            }   
         }
 
         static public bool CheckIsMatchDraw(string[] arr)
@@ -101,20 +140,6 @@ namespace NewTicTacToe
                 return 1;
         }
 
-        static public void GameStart()
-        {
-            GameValidation gv = new GameValidation();
-            for (int i = 0; i < 9; i++)
-            {
-                if (Player1)
-                    i -= Player1Input();
-                else if (Player2)
-                    i -= Player2Input();
-                
-                if (i >= 4)
-                    if (gv.ValidationProcess(PlayBoard))
-                        break;
-            }
-        }        
+        
     }
 }

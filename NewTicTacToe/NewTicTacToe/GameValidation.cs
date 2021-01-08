@@ -30,6 +30,19 @@ namespace NewTicTacToe
                 return true;
             return false;
         }
+
+        public bool IsDraw(string[] arr)
+        {
+            if (!arr.Contains("_"))
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Match Draw");
+                Console.ResetColor();
+                return true;
+            }
+            return false;
+        }
+
         public bool CheckEmptyValues(string v1, string v2, string v3)
         {
             if (v1 != "_" && v2 != "_" && v3 != "_")
